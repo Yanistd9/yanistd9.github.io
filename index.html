@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Portfolio de Yanis Trebuchon Duclos, étudiant en BUT Informatique à la recherche d'un stage en développement logiciel ou web.">
+  <title>Yanis Trebuchon Duclos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <b><span>Yanis</span> Trebuchon Duclos</b>
+    <nav aria-label="Sections">
+      <a href="#projets">Projets</a>
+      <a href="#apprentissage">En cours</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#hors-code">Hors code</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="who">
+          <img src="images/photo.jpg" alt="Photo de Yanis Trebuchon Duclos">
+          <span>BUT Informatique, 2ᵉ année<br>IUT Paris Rives de Seine</span>
+        </div>
+        <h1><span class="prenom">Yanis</span><span class="nom">Trebuchon</span><span class="nom">Duclos</span></h1>
+        <p class="accroche">Curieux de la façon dont les choses fonctionnent.</p>
+        <p class="lede">Étudiant en 2ᵉ année de BUT Informatique, à la recherche d'un stage en développement logiciel ou web. Pour commencer, un petit memory écrit pour cette page : chaque paire trouvée mène au projet qui prouve la compétence.</p>
+        <div class="dispo"><span>Stage de 10 semaines</span><span>À partir du 19 avril 2027</span><span>Asnières-sur-Seine (92)</span></div>
+        <div class="actions">
+          <a class="btn plein" href="#projets">Voir les projets</a>
+          <a class="btn creux" href="#contact">Me contacter</a>
+        </div>
+      </div>
+
+      <div class="jeu" aria-labelledby="jeu-titre">
+        <div class="jeu-tete">
+          <h2 id="jeu-titre">Retrouvez les paires</h2>
+          <span class="compte" id="compte">0 / 6 paires · 0 coup</span>
+        </div>
+        <div class="plateau" id="plateau"></div>
+        <p class="consigne" id="consigne">Retournez deux cartes. Si elles vont ensemble, la preuve apparaît ici.</p>
+        <ul class="preuves" id="preuves"></ul>
+        <div class="fin" id="fin" hidden>
+          <span id="fin-texte"></span>
+          <button type="button" id="rejouer">Rejouer</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc" id="projets">
+    <div class="wrap">
+      <div class="bloc-tete">
+        <h2>Six <span>projets</span></h2>
+        <div>
+          <p>Des projets menés en BUT, décrits par ce que j'y ai fait moi-même. Chaque carte porte sa famille :</p>
+          <div class="couleurs"><span><b>♠</b>programmation</span><span class="rouge"><b>♦</b>web</span><span><b>♣</b>données</span></div>
+        </div>
+      </div>
+
+      <div class="projets">
+        <article class="projet web" id="p-memory">
+          <span class="coin" aria-hidden="true">JS<i>♦</i></span><span class="coin bas" aria-hidden="true">JS<i>♦</i></span>
+          <div>
+            <div class="meta"><span class="sorte">♦ JavaScript · HTML · CSS</span><span>SAÉ 2.01 · 1ʳᵉ année</span><span>Équipe de 3</span></div>
+            <h3>Memory, le jeu de SAÉ</h3>
+            <p>Un projet réalisé et rendu en première année, sans lien avec le petit jeu du haut de page. C'est un memory complet qui tourne dans le navigateur et enregistre chaque partie sur un serveur de scores.</p>
+            <ul class="fait">
+              <li>Le plateau, le chrono, le compteur de coups et la fin de partie</li>
+              <li>Quatre thèmes visuels en variables CSS, mémorisés entre les visites</li>
+              <li>Meilleurs scores, historique et statistiques sauvegardés dans le navigateur</li>
+              <li>Un mode 2 à 4 joueurs, un mode contre la montre, et un morpion caché dans le titre</li>
+              <li>Si le serveur de scores ne répond pas, la partie continue en local</li>
+            </ul>
+          </div>
+          <figure class="visuel">
+            <pre><span class="c">// Game.js — fin de partie</span>
+<span class="k">if</span> (<span class="k">this</span>.#id !== <span class="k">null</span>) {
+  <span class="k">try</span> {
+    <span class="k">await</span> ApiService.updateGameResult(
+      <span class="k">this</span>.#id, pairsRemaining);
+  } <span class="k">catch</span> (error) {
+    showNotice(<span class="s">"Le score n'a pas pu être
+      enregistré sur le serveur."</span>);
+  }
+}</pre>
+            <div class="chiffre">
+              <div><b>15</b>modules JavaScript</div>
+              <div><b>4</b>thèmes</div>
+              <div><b>2 à 4</b>joueurs</div>
+            </div>
+          </figure>
+        </article>
+
+        <article class="projet" id="p-graphe">
+          <span class="coin" aria-hidden="true">J<i>♠</i></span><span class="coin bas" aria-hidden="true">J<i>♠</i></span>
+          <div>
+            <div class="meta"><span class="sorte">♠ Java</span><span>SAÉ 2.02</span><span>Équipe de 3</span></div>
+            <h3>Graphe</h3>
+            <p>Représenter l'architecture d'un programme Java sous forme de graphe orienté, puis répondre à une vraie question : qui dépend de quoi ?</p>
+            <ul class="fait">
+              <li>Deux représentations comparées : listes d'adjacence et matrice d'adjacence</li>
+              <li>Import et export de diagrammes PlantUML</li>
+              <li>Calcul des dépendants directs d'une classe, puis des dépendants élargis en remontant les paquetages</li>
+              <li>Tout est couvert par des tests JUnit 5</li>
+            </ul>
+            <div class="chiffre">
+              <div><b>51</b>tests JUnit passés</div>
+              <div><b>2</b>structures de graphe</div>
+            </div>
+          </div>
+          <figure class="visuel">
+            <svg class="graphe-svg" viewBox="0 0 360 230" role="img" aria-label="Schéma des dépendances entre les classes du projet Graphe">
+              <line x1="180" y1="52" x2="90" y2="101"/>
+              <line x1="180" y1="52" x2="270" y2="101"/>
+              <line x1="90" y1="129" x2="70" y2="178"/>
+              <line x1="90" y1="129" x2="180" y2="178"/>
+              <line x1="270" y1="129" x2="180" y2="178"/>
+              <line x1="270" y1="129" x2="290" y2="178"/>
+              <rect class="cle" x="125" y="24" width="110" height="28" rx="6"/><text x="180" y="42" text-anchor="middle">IGraphe</text>
+              <rect x="15" y="101" width="150" height="28" rx="6"/><text x="90" y="119" text-anchor="middle">Graphe</text>
+              <rect x="195" y="101" width="150" height="28" rx="6"/><text x="270" y="119" text-anchor="middle">AlgorithmesGraphe</text>
+              <rect x="20" y="178" width="100" height="28" rx="6"/><text x="70" y="196" text-anchor="middle">Entite</text>
+              <rect x="130" y="178" width="100" height="28" rx="6"/><text x="180" y="196" text-anchor="middle">Importeur</text>
+              <rect x="240" y="178" width="100" height="28" rx="6"/><text x="290" y="196" text-anchor="middle">Export</text>
+            </svg>
+            <figcaption>Les classes principales du projet et leurs liens</figcaption>
+          </figure>
+        </article>
+
+        <article class="projet" id="p-kdou">
+          <span class="coin" aria-hidden="true">SQL<i>♣</i></span><span class="coin bas" aria-hidden="true">SQL<i>♣</i></span>
+          <div>
+            <div class="meta"><span class="sorte">♣ SQL · HTML · CSS</span><span>SAÉ 1.04</span><span>Équipe de 4</span></div>
+            <h3>KDou</h3>
+            <p>Analyser la base de données d'un distributeur alimentaire pour l'aider à décider : ce qui se vend, à qui, et avec quels fournisseurs. Le rapport est un site web.</p>
+            <ul class="fait">
+              <li>Étude du schéma relationnel et de la cohérence des données</li>
+              <li>Les requêtes imposées, puis des indicateurs décisionnels en SQL</li>
+              <li>Mon indicateur : les catégories les plus commandées par les clients partenaires</li>
+              <li>Une console SQL qui tourne dans le navigateur, sur une base de démonstration reconstruite à partir du schéma</li>
+            </ul>
+          </div>
+          <figure class="visuel">
+            <pre><span class="k">SELECT</span> Categorie.NomCateg,
+       <span class="k">SUM</span>(DetailCommande.Quantité) <span class="k">AS</span> Qt
+<span class="k">FROM</span> DetailCommande
+  <span class="k">JOIN</span> Produit   <span class="k">USING</span> (RefProd)
+  <span class="k">JOIN</span> Categorie <span class="k">USING</span> (CodeCateg)
+  <span class="k">JOIN</span> Commande  <span class="k">USING</span> (NumCommande)
+  <span class="k">JOIN</span> Clientele <span class="k">USING</span> (CodeCli)
+<span class="k">WHERE</span> Clientele.CodeCliPart <span class="k">IS NOT NULL</span>
+<span class="k">GROUP BY</span> Categorie.NomCateg
+<span class="k">ORDER BY</span> Qt <span class="k">DESC</span>;</pre>
+            <div class="barres" role="img" aria-label="Résultat : Desserts 69, Produits laitiers 22, Boissons 19, Fruits de mer 10">
+              <div class="barre"><span>Desserts</span><i style="width:100%"></i><span>69</span></div>
+              <div class="barre"><span>Produits laitiers</span><i style="width:31.9%"></i><span>22</span></div>
+              <div class="barre"><span>Boissons</span><i style="width:27.5%"></i><span>19</span></div>
+              <div class="barre"><span>Fruits de mer</span><i style="width:14.5%"></i><span>10</span></div>
+            </div>
+            <figcaption>Quantités commandées par catégorie, sur la base de démonstration</figcaption>
+          </figure>
+        </article>
+
+        <article class="projet" id="p-scolarite">
+          <span class="coin" aria-hidden="true">C<i>♠</i></span><span class="coin bas" aria-hidden="true">C<i>♠</i></span>
+          <div>
+            <div class="meta"><span class="sorte">♠ C</span><span>SAÉ C · période A</span></div>
+            <h3>Gestion de scolarité</h3>
+            <p>Un programme en ligne de commande qui suit les étudiants d'un BUT sur six semestres : inscriptions, notes, démissions, jurys et bilans.</p>
+            <ul class="fait">
+              <li>Une structure par étudiant : notes par UE et par semestre, codes de validation, statut</li>
+              <li>Les commandes INSCRIRE, NOTE, CURSUS, ETUDIANTS, DEMISSION, DEFAILLANCE, JURY et BILAN</li>
+              <li>Les règles du jury : passage, ajournement, diplôme</li>
+            </ul>
+            <div class="chiffre">
+              <div><b>~500</b>lignes de C</div>
+              <div><b>6</b>semestres suivis</div>
+              <div><b>180</b>étudiants max.</div>
+            </div>
+          </div>
+          <figure class="visuel">
+            <pre><span class="c">$ ./prog</span>
+<span class="k">INSCRIRE</span> Ada Lovelace
+Inscription enregistree (1)
+<span class="k">INSCRIRE</span> Alan Turing
+Inscription enregistree (2)
+<span class="k">INSCRIRE</span> Ada Lovelace
+Nom incorrect
+<span class="k">EXIT</span></pre>
+            <figcaption>Une session réelle : le programme refuse les doublons</figcaption>
+          </figure>
+        </article>
+
+        <article class="projet" id="p-circus">
+          <span class="coin" aria-hidden="true">C<i>♠</i></span><span class="coin bas" aria-hidden="true">C<i>♠</i></span>
+          <div>
+            <div class="meta"><span class="sorte">♠ C</span><span>Projet universitaire</span></div>
+            <h3>Crazy Circus</h3>
+            <p>Un jeu de réflexion en console. Des animaux sont empilés sur deux podiums, et il faut retrouver l'ordre demandé avec le moins de mouvements possible.</p>
+            <ul class="fait">
+              <li>La logique de jeu et la validation des coups</li>
+              <li>Les podiums gérés comme des piles</li>
+              <li>L'affichage dynamique en console</li>
+            </ul>
+          </div>
+          <figure class="visuel" id="cirque">
+            <div class="cirque-tete">
+              <p class="etape" id="etape" aria-live="polite"><b>Départ</b>Tous les animaux sont sur le podium de gauche.</p>
+              <div class="objectif">Objectif
+                <div class="mini" aria-label="Objectif : à gauche le lion sous l'ours, à droite l'éléphant">
+                  <div><i style="background:#CBC3E3"></i><i style="background:#ff9d8a"></i></div>
+                  <div><i style="background:#9fd8c9"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="scene" id="scene" aria-hidden="true">
+              <span class="socle" style="left:28%"></span>
+              <span class="socle" style="left:72%"></span>
+            </div>
+            <div class="cirque-pied">
+              <figcaption>Deux podiums, deux piles : on ne touche qu'aux animaux du dessus</figcaption>
+              <button type="button" id="cirque-btn">Pause</button>
+            </div>
+          </figure>
+        </article>
+
+        <article class="projet web" id="p-site">
+          <span class="coin" aria-hidden="true">JS<i>♦</i></span><span class="coin bas" aria-hidden="true">JS<i>♦</i></span>
+          <div>
+            <div class="meta"><span class="sorte">♦ HTML · CSS · JavaScript</span><span>Projet personnel</span></div>
+            <h3>Ce site</h3>
+            <p>Écrit à la main, sans framework. Le petit memory du haut de page a été écrit exprès pour ce site, bien plus simple que mon jeu de SAÉ : un paquet mélangé, deux cartes au plus, une vérification, et les cartes se referment si elles ne vont pas ensemble.</p>
+            <ul class="fait">
+              <li>Mise en page qui s'adapte du téléphone au grand écran</li>
+              <li>Navigation au clavier et animations coupées si vous les désactivez</li>
+            </ul>
+          </div>
+          <figure class="visuel">
+            <pre><span class="k">if</span> (a.dataset.cle === b.dataset.cle) {
+  a.classList.add(<span class="s">'trouvee'</span>);
+  b.classList.add(<span class="s">'trouvee'</span>);
+  montrerPreuve(a.dataset.cle);
+} <span class="k">else</span> {
+  setTimeout(refermer, <span class="s">850</span>);
+}</pre>
+            <figcaption>Le cœur du memory de cette page</figcaption>
+          </figure>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc" id="apprentissage">
+    <div class="wrap">
+      <div class="bloc-tete">
+        <h2>En <span>cours</span></h2>
+        <p>Ce que j'apprends cette année en 2ᵉ année de BUT. Pas encore de projet à montrer : ce sont les prochaines cartes du jeu.</p>
+      </div>
+      <div class="a-venir">
+        <article class="prochaine web">
+          <span class="coin" aria-hidden="true">PHP<i>♦</i></span>
+          <span class="quand-etiquette">S3</span>
+          <h3>PHP</h3>
+          <p class="sous">Le développement web côté serveur</p>
+          <p>Générer des pages à la volée, traiter des formulaires et relier un site à une base de données. La suite logique de ce que je fais déjà en HTML, CSS et SQL.</p>
+        </article>
+        <article class="prochaine">
+          <span class="coin" aria-hidden="true">NoSQL<i>♣</i></span>
+          <span class="quand-etiquette">S4</span>
+          <h3>NoSQL</h3>
+          <p class="sous">Les bases de données non relationnelles</p>
+          <p>Stocker des données sans tables ni schéma fixe, et savoir quand ce modèle est plus adapté qu'une base SQL classique.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc" id="parcours">
+    <div class="wrap">
+      <div class="bloc-tete">
+        <h2>Par<span>cours</span></h2>
+        <p>Un bac technologique, puis l'informatique. La fenêtre suivante est celle qui vous concerne.</p>
+      </div>
+      <div class="parcours">
+        <ol class="frise">
+          <li>
+            <span class="quand">2021 – 2024</span>
+            <h3>Bac STI2D</h3>
+            <p>Lycée Léonard de Vinci, Levallois-Perret. Mention Assez Bien, formation orientée systèmes et sécurité. Deux ans de binaire avant d'écrire mon premier programme.</p>
+          </li>
+          <li class="maintenant">
+            <span class="quand">2024 – aujourd'hui</span>
+            <h3>BUT Informatique</h3>
+            <p>IUT Paris Rives de Seine. Algorithmique et complexité, programmation système, réseaux, bases de données, IHM, probabilités et statistiques, gestion de projet.</p>
+          </li>
+          <li class="avenir">
+            <span class="quand">Avril 2027</span>
+            <h3>Stage de 10 semaines</h3>
+            <p>À partir du 19 avril, en développement logiciel ou web. La date de fin peut s'adapter.</p>
+          </li>
+        </ol>
+        <div class="cote">
+          <div class="encart">
+            <h3>Expérience</h3>
+            <p>Stage d'observation de 3 semaines à l'Agirc-Arrco : les processus de gestion d'un organisme d'intérêt général et la coordination entre services.</p>
+          </div>
+          <div class="encart">
+            <h3>Outils</h3>
+            <dl>
+              <dt>Langages</dt><dd>C, Java, SQL, JavaScript, HTML, CSS</dd>
+              <dt>Éditeurs</dt><dd>IntelliJ IDEA, CLion, PhpStorm, PyCharm, VS Code</dd>
+              <dt>Autres</dt><dd>Git et GitHub, Linux en terminal</dd>
+              <dt>Langues</dt><dd>Français natif, anglais B2</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc" id="hors-code">
+    <div class="wrap">
+      <div class="bloc-tete">
+        <h2>Hors <span>code</span></h2>
+        <p>Ce qui m'occupe le reste du temps, et qui finit souvent par revenir dans mes projets.</p>
+      </div>
+      <div class="main-cartes">
+        <div class="gout"><span class="coin" aria-hidden="true">S</span><h3>Sport</h3><p>Musculation plusieurs fois par semaine, avec un programme que je fais évoluer. Je prépare un outil pour suivre mes séances.</p></div>
+        <div class="gout"><span class="coin" aria-hidden="true">J</span><h3>Jeux vidéo</h3><p>J'y joue, et j'en code : deux des projets ci-dessus sont des jeux.</p></div>
+        <div class="gout"><span class="coin" aria-hidden="true">M</span><h3>Musique</h3><p>Toujours quelque chose dans les oreilles, en particulier quand je code.</p></div>
+        <div class="gout"><span class="coin" aria-hidden="true">C</span><h3>Cinéma</h3><p>Je regarde beaucoup de films, et j'aime en parler après.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div>
+        <h2>Parlons de <span>votre stage</span></h2>
+        <p class="intro">Je suis disponible pour un échange, en visio ou sur place en Île-de-France.</p>
+      </div>
+      <div class="visite">
+        <div class="nom-carte">Yanis Trebuchon Duclos</div>
+        <div class="role">Étudiant en BUT Informatique · stage dès le 19 avril 2027</div>
+        <div class="coords">
+          <div class="coord"><span id="mail">Yanis060918@gmail.com</span><button type="button" data-copie="mail">Copier</button></div>
+          <div class="coord"><span id="tel">07 69 40 30 15</span><button type="button" data-copie="tel">Copier</button></div>
+        </div>
+        <p class="lieu">Asnières-sur-Seine (92)</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
