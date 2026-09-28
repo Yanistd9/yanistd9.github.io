@@ -159,3 +159,19 @@
     });
   });
 })();
+
+/* Menu burger (téléphone) */
+(function(){
+  var top = document.querySelector('.top');
+  var btn = top && top.querySelector('.burger');
+  if(!btn) return;
+  function regler(ouvert){
+    top.classList.toggle('ouvert', ouvert);
+    btn.setAttribute('aria-expanded', ouvert);
+    btn.setAttribute('aria-label', ouvert ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  btn.addEventListener('click', function(){ regler(!top.classList.contains('ouvert')); });
+  top.querySelectorAll('nav a').forEach(function(a){ a.addEventListener('click', function(){ regler(false); }); });
+  document.addEventListener('click', function(e){ if(!top.contains(e.target)) regler(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') regler(false); });
+})();

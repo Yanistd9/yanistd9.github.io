@@ -47,7 +47,22 @@ a{color:var(--fenetre);}
 .top nav{display:flex; gap:clamp(12px,2.5vw,28px); flex-wrap:wrap; justify-content:flex-end;}
 .top nav a{color:var(--brume); text-decoration:none; font-size:.9rem;}
 .top nav a:hover{color:var(--lune);}
-@media (max-width:560px){ .top b{display:none;} .top .wrap{justify-content:center;} }
+/* Menu burger : téléphone uniquement */
+.burger{display:none;}
+@media (max-width:640px){
+  .top b{font-size:1.1rem; white-space:nowrap;}
+  .burger{display:flex; flex-direction:column; justify-content:center; gap:5px; width:44px; height:44px; padding:0 11px;
+    background:none; border:1px solid var(--trait); border-radius:10px; cursor:pointer;}
+  .burger span{display:block; height:2px; background:var(--lune); border-radius:2px; transition:transform .25s ease, opacity .2s ease;}
+  .top.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .top.ouvert .burger span:nth-child(2){opacity:0;}
+  .top.ouvert .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .top nav{display:none; position:absolute; left:0; right:0; top:100%; flex-direction:column; gap:0;
+    padding:4px clamp(16px,4vw,48px) 12px; background:var(--table); border-bottom:1px solid var(--trait);}
+  .top.ouvert nav{display:flex;}
+  .top nav a{padding:14px 0; font-size:1.05rem; border-bottom:1px solid var(--trait);}
+  .top nav a:last-child{border-bottom:0;}
+}
 
 /* ---------- ouverture ---------- */
 .hero{padding-block:clamp(40px,6vw,80px) clamp(56px,7vw,96px);}
