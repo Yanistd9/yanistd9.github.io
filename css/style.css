@@ -1,22 +1,22 @@
-/* variables */
+/* variables d'ambiance */
 :root {
   color-scheme: dark;
-  --table: #00001A;
-  --table-2: #0d0d38;
-  --lune: #FFE6EA;
-  --brume: #98a3c6;
-  --trait: rgba(255, 230, 234, 0.12);
-  --fenetre: #CBC3E3;
-  --papier: #FFE6EA;
-  --papier-2: #f5d4da;
-  --encre: #00001A;
-  --encre-2: #545f88;
-  --rouge: #c63d2f;
-  --affiche: 'Big Shoulders Display', 'Arial Narrow', 'Roboto Condensed', sans-serif;
-  --texte: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif;
-  --mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
-  --halo: rgba(203, 195, 227, 0.55);
-  --halo-doux: rgba(203, 195, 227, 0.28);
+  --bg-dark: #00001A;
+  --bg-dark-alt: #0d0d38;
+  --text-light: #FFE6EA;
+  --text-muted: #98a3c6;
+  --border-subtle: rgba(255, 230, 234, 0.12);
+  --accent-lavender: #CBC3E3;
+  --card-light: #FFE6EA;
+  --card-light-alt: #f5d4da;
+  --text-dark: #00001A;
+  --text-dark-muted: #545f88;
+  --badge-red: #c63d2f;
+  --font-display: 'Big Shoulders Display', 'Arial Narrow', 'Roboto Condensed', sans-serif;
+  --font-sans: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-code: 'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+  --glow: rgba(203, 195, 227, 0.55);
+  --glow-soft: rgba(203, 195, 227, 0.28);
 }
 
 * {
@@ -43,8 +43,8 @@ html {
 
 body {
   margin: 0;
-  color: var(--lune);
-  font-family: var(--texte);
+  color: var(--text-light);
+  font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.6;
   padding-left: clamp(16px, 4vw, 48px);
@@ -52,12 +52,11 @@ body {
   background:
           radial-gradient(ellipse 80% 50% at 50% 0%, rgba(203, 195, 227, 0.07), transparent 70%),
           url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
-          var(--table);
+          var(--bg-dark);
 }
 
 h1, h2, h3 {
   margin: 0;
-  text-wrap: balance;
 }
 
 p {
@@ -65,11 +64,11 @@ p {
 }
 
 a {
-  color: var(--fenetre);
+  color: var(--accent-lavender);
 }
 
 :focus-visible {
-  outline: 2px solid var(--fenetre);
+  outline: 2px solid var(--accent-lavender);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -93,7 +92,7 @@ a {
   padding-right: clamp(16px, 4vw, 48px);
   background: rgba(0, 0, 26, 0.9);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--trait);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .top .wrap {
@@ -104,7 +103,7 @@ a {
 }
 
 .top b {
-  font-family: var(--affiche);
+  font-family: var(--font-display);
   font-weight: 800;
   font-size: 1.3rem;
   letter-spacing: 0.02em;
@@ -112,7 +111,7 @@ a {
 }
 
 .top b span {
-  color: var(--fenetre);
+  color: var(--accent-lavender);
 }
 
 .top nav {
@@ -123,14 +122,14 @@ a {
 }
 
 .top nav a {
-  color: var(--brume);
+  color: var(--text-muted);
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
 .top nav a:hover {
-  color: var(--lune);
+  color: var(--text-light);
   text-shadow: 0 0 14px rgba(203, 195, 227, 0.7);
 }
 
@@ -152,14 +151,14 @@ a {
     height: 44px;
     padding: 0 11px;
     background: none;
-    border: 1px solid var(--trait);
+    border: 1px solid var(--border-subtle);
     border-radius: 10px;
     cursor: pointer;
   }
   .burger span {
     display: block;
     height: 2px;
-    background: var(--lune);
+    background: var(--text-light);
     border-radius: 2px;
     transition: transform 0.25s ease, opacity 0.2s ease;
   }
@@ -181,8 +180,8 @@ a {
     flex-direction: column;
     gap: 0;
     padding: 4px clamp(16px, 4vw, 48px) 12px;
-    background: var(--table);
-    border-bottom: 1px solid var(--trait);
+    background: var(--bg-dark);
+    border-bottom: 1px solid var(--border-subtle);
   }
   .top.ouvert nav {
     display: flex;
@@ -190,7 +189,7 @@ a {
   .top nav a {
     padding: 14px 0;
     font-size: 1.05rem;
-    border-bottom: 1px solid var(--trait);
+    border-bottom: 1px solid var(--border-subtle);
   }
   .top nav a:last-child {
     border-bottom: 0;
@@ -228,17 +227,17 @@ a {
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--fenetre);
+  border: 2px solid var(--accent-lavender);
 }
 
 .who span {
-  color: var(--brume);
+  color: var(--text-muted);
   font-size: 0.92rem;
   line-height: 1.4;
 }
 
 .hero h1 {
-  font-family: var(--affiche);
+  font-family: var(--font-display);
   font-weight: 900;
   text-transform: uppercase;
   font-size: clamp(3.4rem, 7.4vw, 6.4rem);
@@ -247,14 +246,14 @@ a {
 }
 
 .hero h1 .prenom {
-  color: var(--fenetre);
+  color: var(--accent-lavender);
   display: block;
 }
 
 .hero h1 .nom {
   display: block;
   color: transparent;
-  -webkit-text-stroke: 2px var(--lune);
+  -webkit-text-stroke: 2px var(--text-light);
 }
 
 .accroche {
@@ -262,14 +261,14 @@ a {
   font-size: clamp(1.2rem, 2.2vw, 1.5rem);
   line-height: 1.3;
   font-weight: 500;
-  color: var(--lune);
+  color: var(--text-light);
   max-width: 26em;
 }
 
 .lede {
   margin-top: 14px;
   max-width: 34em;
-  color: var(--brume);
+  color: var(--text-muted);
   font-size: 1.02rem;
 }
 
@@ -282,15 +281,15 @@ a {
 
 .dispo span {
   padding: 6px 12px;
-  border: 1px solid var(--trait);
+  border: 1px solid var(--border-subtle);
   border-radius: 6px;
   font-size: 0.88rem;
-  color: var(--brume);
+  color: var(--text-muted);
 }
 
 .dispo span:first-child {
-  border-color: var(--fenetre);
-  color: var(--fenetre);
+  border-color: var(--accent-lavender);
+  color: var(--accent-lavender);
   font-weight: 600;
 }
 
@@ -306,7 +305,7 @@ a {
   align-items: center;
   padding: 12px 20px;
   border-radius: 6px;
-  font-family: var(--texte);
+  font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
@@ -316,26 +315,26 @@ a {
 }
 
 .btn.plein {
-  background: var(--fenetre);
+  background: var(--accent-lavender);
   color: #00001A;
 }
 
 .btn.plein:hover {
   background: #dcd6ee;
-  box-shadow: 0 0 26px 2px var(--halo);
+  box-shadow: 0 0 26px 2px var(--glow);
 }
 
 .btn.creux {
-  color: var(--lune);
-  border-color: var(--trait);
+  color: var(--text-light);
+  border-color: var(--border-subtle);
 }
 
 .btn.creux:hover {
-  border-color: var(--brume);
-  box-shadow: 0 0 22px var(--halo-doux);
+  border-color: var(--text-muted);
+  box-shadow: 0 0 22px var(--glow-soft);
 }
 
-/* memory */
+/* plateau memory */
 .jeu {
   position: relative;
 }
@@ -349,7 +348,7 @@ a {
 }
 
 .jeu-tete h2 {
-  font-family: var(--affiche);
+  font-family: var(--font-display);
   font-weight: 800;
   text-transform: uppercase;
   font-size: 1.5rem;
@@ -357,9 +356,9 @@ a {
 }
 
 .compte {
-  font-family: var(--mono);
+  font-family: var(--font-code);
   font-size: 0.78rem;
-  color: var(--brume);
+  color: var(--text-muted);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
@@ -404,7 +403,7 @@ a {
 }
 
 .dos {
-  background: var(--table-2);
+  background: var(--bg-dark-alt);
   border: 1px solid rgba(255, 230, 234, 0.18);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -422,7 +421,7 @@ a {
 }
 
 .dos i.on {
-  background: var(--fenetre);
+  background: var(--accent-lavender);
   box-shadow: 0 0 8px rgba(203, 195, 227, 0.55);
 }
 
@@ -431,13 +430,13 @@ a {
 }
 
 .carte:not(.trouvee):hover .dos {
-  box-shadow: 0 0 26px 2px var(--halo), 0 6px 14px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 26px 2px var(--glow), 0 6px 14px rgba(0, 0, 0, 0.35);
 }
 
 .recto {
   transform: rotateY(180deg);
-  background: var(--papier);
-  color: var(--encre);
+  background: var(--card-light);
+  color: var(--text-dark);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -446,32 +445,31 @@ a {
   padding: 6px;
   text-align: center;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
-  container-type: inline-size;
 }
 
 .recto b {
-  font-family: var(--affiche);
+  font-family: var(--font-display);
   font-weight: 900;
   text-transform: uppercase;
-  font-size: min(26cqw, 1.6rem);
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
   line-height: 0.95;
   max-width: 100%;
   white-space: nowrap;
 }
 
 .recto b.long {
-  font-size: min(13.5cqw, 1.2rem);
+  font-size: clamp(0.85rem, 1.6vw, 1.2rem);
   letter-spacing: 0.01em;
 }
 
 .recto small {
   font-size: 0.64rem;
-  color: var(--encre-2);
+  color: var(--text-dark-muted);
   letter-spacing: 0.06em;
 }
 
 .carte.trouvee .recto {
-  background: var(--fenetre);
+  background: var(--accent-lavender);
 }
 
 .carte.trouvee .recto small {
@@ -485,7 +483,7 @@ a {
 .consigne {
   margin-top: 12px;
   font-size: 0.9rem;
-  color: var(--brume);
+  color: var(--text-muted);
 }
 
 .preuves {
@@ -503,7 +501,7 @@ a {
   gap: 10px;
   align-items: baseline;
   padding: 7px 10px;
-  border-left: 3px solid var(--fenetre);
+  border-left: 3px solid var(--accent-lavender);
   background: rgba(203, 195, 227, 0.07);
   font-size: 0.9rem;
   animation: apparait 0.35s ease;
@@ -511,20 +509,20 @@ a {
 }
 
 .preuves li:hover {
-  box-shadow: 0 0 22px var(--halo-doux);
+  box-shadow: 0 0 22px var(--glow-soft);
 }
 
 .preuves li b {
-  font-family: var(--affiche);
+  font-family: var(--font-display);
   font-weight: 800;
   text-transform: uppercase;
-  color: var(--fenetre);
+  color: var(--accent-lavender);
   font-size: 1rem;
   letter-spacing: 0.02em;
 }
 
 .preuves li a {
-  color: var(--lune);
+  color: var(--text-light);
   text-decoration-color: rgba(255, 230, 234, 0.35);
   text-underline-offset: 3px;
 }
@@ -552,11 +550,11 @@ a {
 
 .fin button {
   background: none;
-  border: 1px solid var(--trait);
-  color: var(--lune);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-light);
   border-radius: 6px;
   padding: 7px 12px;
-  font-family: var(--texte);
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.85rem;
   cursor: pointer;
@@ -564,7 +562,7 @@ a {
 }
 
 .fin button:hover {
-  box-shadow: 0 0 18px var(--halo-doux);
+  box-shadow: 0 0 18px var(--glow-soft);
   border-color: rgba(203, 195, 227, 0.5);
 }
 
@@ -581,12 +579,12 @@ section.bloc {
   justify-content: space-between;
   gap: 18px 40px;
   margin-bottom: clamp(36px, 5vw, 64px);
-  border-bottom: 1px solid var(--trait);
+  border-bottom: 1px solid var(--border-subtle);
   padding-bottom: 18px;
 }
 
 .bloc-tete h2 {
-  font-family: var(--affiche);
+  font-family: var(--font-display);
   font-weight: 900;
   text-transform: uppercase;
   font-size: clamp(3.2rem, 9vw, 7rem);
@@ -596,11 +594,11 @@ section.bloc {
 
 .bloc-tete h2 span {
   color: transparent;
-  -webkit-text-stroke: 1.5px var(--lune);
+  -webkit-text-stroke: 1.5px var(--text-light);
 }
 
 .bloc-tete p {
-  color: var(--brume);
+  color: var(--text-muted);
   max-width: 30em;
   font-size: 0.98rem;
 }
@@ -611,7 +609,7 @@ section.bloc {
   gap: 6px 16px;
   margin-top: 10px;
   font-size: 0.88rem;
-  color: var(--lune);
+  color: var(--text-light);
 }
 
 .couleurs b {
@@ -623,7 +621,7 @@ section.bloc {
   color: #ff7a69;
 }
 
-/* projets cartes */
+/* cartes projets */
 .projets {
   display: flex;
   flex-direction: column;
@@ -633,8 +631,8 @@ section.bloc {
 .projet {
   --r: 0deg;
   position: relative;
-  background: var(--papier);
-  color: var(--encre);
+  background: var(--card-light);
+  color: var(--text-dark);
   border-radius: 16px;
   padding-top: clamp(52px, 6vw, 64px);
   padding-bottom: clamp(52px, 6vw, 64px);
@@ -674,13 +672,13 @@ section.bloc {
   box-shadow:
           0 1px 0 rgba(255, 255, 255, 0.6) inset,
           0 0 0 1px rgba(203, 195, 227, 0.35),
-          0 0 90px 12px var(--halo),
+          0 0 90px 12px var(--glow),
           0 22px 44px rgba(0, 0, 0, 0.45);
 }
 
 .projet.eclaire {
   box-shadow:
-          0 0 0 4px var(--fenetre),
+          0 0 0 4px var(--accent-lavender),
           0 22px 44px rgba(0, 0, 0, 0.45);
 }
 
@@ -699,10 +697,10 @@ section.bloc {
   flex-direction: column;
   align-items: center;
   line-height: 0.95;
-  font-family: var(--affiche);
+  font-family: var(--font-display);
   font-weight: 900;
   font-size: 1.15rem;
-  color: var(--encre);
+  color: var(--text-dark);
 }
 
 .coin i {
@@ -720,7 +718,7 @@ section.bloc {
 
 .projet.web .coin i,
 .projet.web .meta .sorte {
-  color: var(--rouge);
+  color: var(--badge-red);
 }
 
 .meta {
@@ -728,17 +726,17 @@ section.bloc {
   flex-wrap: wrap;
   gap: 4px 14px;
   font-size: 0.8rem;
-  color: var(--encre-2);
+  color: var(--text-dark-muted);
   margin-bottom: 6px;
 }
 
 .meta .sorte {
   font-weight: 600;
-  color: var(--encre);
+  color: var(--text-dark);
 }
 
 .projet h3 {
-  font-family: var(--affiche);
+  font-family: var(--font-display);
   font-weight: 900;
   text-transform: uppercase;
   font-size: clamp(2.2rem, 4.4vw, 3.2rem);
@@ -747,7 +745,7 @@ section.bloc {
 }
 
 .projet > div > p {
-  color: var(--encre-2);
+  color: var(--text-dark-muted);
   max-width: 34em;
 }
 
@@ -774,7 +772,7 @@ section.bloc {
   width: 9px;
   height: 11px;
   border-radius: 1px;
-  background: var(--encre);
+  background: var(--text-dark);
 }
 
 .chiffre {
@@ -786,32 +784,32 @@ section.bloc {
 
 .chiffre div {
   font-size: 0.82rem;
-  color: var(--encre-2);
+  color: var(--text-dark-muted);
   line-height: 1.25;
 }
 
 .chiffre b {
   display: block;
-  font-family: var(--affiche);
+  font-family: var(--font-display);
   font-weight: 900;
   font-size: 2.1rem;
   line-height: 1;
-  color: var(--encre);
+  color: var(--text-dark);
   font-variant-numeric: tabular-nums;
 }
 
 .visuel .chiffre div {
-  color: var(--brume);
+  color: var(--text-muted);
 }
 
 .visuel .chiffre b {
-  color: var(--lune);
+  color: var(--text-light);
 }
 
 /* visuel projet */
 .visuel {
-  background: var(--table);
-  color: var(--lune);
+  background: var(--bg-dark);
+  color: var(--text-light);
   border-radius: 10px;
   padding: 18px;
   display: flex;
@@ -823,7 +821,7 @@ section.bloc {
 
 .visuel figcaption {
   font-size: 0.8rem;
-  color: var(--brume);
+  color: var(--text-muted);
 }
 
 figure {
@@ -834,20 +832,20 @@ pre {
   font-variant-ligatures: none;
   font-feature-settings: 'liga' 0, 'calt' 0;
   margin: 0;
-  font-family: var(--mono);
+  font-family: var(--font-code);
   font-size: 0.78rem;
   line-height: 1.6;
-  color: var(--lune);
+  color: var(--text-light);
   overflow-x: auto;
   white-space: pre;
 }
 
 pre .k {
-  color: var(--fenetre);
+  color: var(--accent-lavender);
 }
 
 pre .c {
-  color: var(--brume);
+  color: var(--text-muted);
 }
 
 pre .s {
@@ -871,14 +869,14 @@ pre .s {
 .barre span:last-child {
   text-align: right;
   font-variant-numeric: tabular-nums;
-  color: var(--brume);
+  color: var(--text-muted);
 }
 
 .barre i {
   display: block;
   height: 10px;
   border-radius: 2px;
-  background: var(--fenetre);
+  background: var(--accent-lavender);
 }
 
 .graphe-svg {
@@ -890,9 +888,9 @@ pre .s {
 }
 
 .graphe-svg text {
-  font-family: var(--mono);
+  font-family: var(--font-code);
   font-size: 11px;
-  fill: var(--lune);
+  fill: var(--text-light);
 }
 
 .graphe-svg line {
@@ -901,13 +899,13 @@ pre .s {
 }
 
 .graphe-svg rect {
-  fill: var(--table-2);
+  fill: var(--bg-dark-alt);
   stroke: rgba(255, 230, 234, 0.3);
 }
 
 .graphe-svg rect.cle {
   fill: #34306b;
-  stroke: var(--fenetre);
+  stroke: var(--accent-lavender);
 }
 
 /* cirque */
@@ -926,10 +924,10 @@ pre .s {
 
 .etape b {
   display: block;
-  font-family: var(--mono);
+  font-family: var(--font-code);
   font-weight: 500;
   font-size: 0.75rem;
-  color: var(--brume);
+  color: var(--text-muted);
   font-variant-numeric: tabular-nums;
 }
 
@@ -939,7 +937,7 @@ pre .s {
   align-items: flex-end;
   gap: 4px;
   font-size: 0.72rem;
-  color: var(--brume);
+  color: var(--text-muted);
   flex-shrink: 0;
 }
 
@@ -955,7 +953,7 @@ pre .s {
   gap: 2px;
   align-items: center;
   width: 26px;
-  border-bottom: 2px solid var(--brume);
+  border-bottom: 2px solid var(--text-muted);
   padding-bottom: 2px;
   min-height: 10px;
 }
@@ -979,7 +977,7 @@ pre .s {
   width: 34%;
   height: 8px;
   border-radius: 2px;
-  background: var(--brume);
+  background: var(--text-muted);
   transform: translateX(-50%);
 }
 
@@ -992,7 +990,7 @@ pre .s {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--texte);
+  font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.78rem;
   color: #00001A;
@@ -1000,7 +998,7 @@ pre .s {
 }
 
 .animal.actif {
-  box-shadow: 0 0 0 2px var(--lune), 0 6px 16px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 0 0 2px var(--text-light), 0 6px 16px rgba(0, 0, 0, 0.45);
 }
 
 .cirque-pied {
@@ -1012,11 +1010,11 @@ pre .s {
 
 .cirque-pied button {
   background: none;
-  border: 1px solid var(--trait);
-  color: var(--lune);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-light);
   border-radius: 6px;
   padding: 6px 12px;
-  font-family: var(--texte);
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.82rem;
   cursor: pointer;
@@ -1024,8 +1022,8 @@ pre .s {
 }
 
 .cirque-pied button:hover {
-  border-color: var(--brume);
-  box-shadow: 0 0 18px var(--halo-doux);
+  border-color: var(--text-muted);
+  box-shadow: 0 0 18px var(--glow-soft);
 }
 
 /* parcours */
@@ -1055,7 +1053,7 @@ pre .s {
   top: 10px;
   bottom: 10px;
   width: 2px;
-  background: var(--trait);
+  background: var(--border-subtle);
 }
 
 .frise li {
@@ -1080,25 +1078,25 @@ pre .s {
 }
 
 .frise li.maintenant::before {
-  background: var(--fenetre);
+  background: var(--accent-lavender);
   box-shadow: 0 0 14px rgba(203, 195, 227, 0.6);
-  border-color: var(--fenetre);
+  border-color: var(--accent-lavender);
 }
 
 .frise li.avenir::before {
   background: transparent;
-  border: 2px dashed var(--fenetre);
+  border: 2px dashed var(--accent-lavender);
 }
 
 .frise .quand {
-  font-family: var(--mono);
+  font-family: var(--font-code);
   font-size: 0.78rem;
-  color: var(--brume);
+  color: var(--text-muted);
   font-variant-numeric: tabular-nums;
 }
 
 .frise h3 {
-  font-family: var(--affiche);
+  font-family: var(--font-display);
   font-weight: 800;
   text-transform: uppercase;
   font-size: 1.9rem;
@@ -1108,13 +1106,13 @@ pre .s {
 }
 
 .frise p {
-  color: var(--brume);
+  color: var(--text-muted);
   font-size: 0.95rem;
   max-width: 34em;
 }
 
 .frise li.avenir h3 {
-  color: var(--fenetre);
+  color: var(--accent-lavender);
 }
 
 .cote {
@@ -1124,14 +1122,14 @@ pre .s {
 }
 
 .encart {
-  border: 1px solid var(--trait);
+  border: 1px solid var(--border-subtle);
   border-radius: 10px;
   padding: 18px 20px;
   background: rgba(13, 13, 56, 0.55);
 }
 
 .encart h3 {
-  font-family: var(--affiche);
+  font-family: var(--font-display);
   font-weight: 800;
   text-transform: uppercase;
   font-size: 1.3rem;
@@ -1140,7 +1138,7 @@ pre .s {
 }
 
 .encart p {
-  color: var(--brume);
+  color: var(--text-muted);
   font-size: 0.93rem;
 }
 
@@ -1153,14 +1151,14 @@ pre .s {
 }
 
 .encart dt {
-  color: var(--brume);
+  color: var(--text-muted);
 }
 
 .encart dd {
   margin: 0;
 }
 
-/* hors-code */
+/* hors code */
 .main-cartes {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1170,8 +1168,8 @@ pre .s {
 
 .gout {
   position: relative;
-  background: var(--papier);
-  color: var(--encre);
+  background: var(--card-light);
+  color: var(--text-dark);
   border-radius: 12px;
   padding: 44px 18px 22px;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
@@ -1207,7 +1205,7 @@ pre .s {
   transform: rotate(0) translateY(-6px);
   box-shadow:
           0 0 0 1px rgba(203, 195, 227, 0.35),
-          0 0 56px 8px var(--halo),
+          0 0 56px 8px var(--glow),
           0 14px 30px rgba(0, 0, 0, 0.4);
 }
 
@@ -1218,7 +1216,7 @@ pre .s {
 }
 
 .gout h3 {
-  font-family: var(--affiche);
+  font-family: var(--font-display);
   font-weight: 900;
   text-transform: uppercase;
   font-size: 1.9rem;
@@ -1227,7 +1225,7 @@ pre .s {
 }
 
 .gout p {
-  color: var(--encre-2);
+  color: var(--text-dark-muted);
   font-size: 0.92rem;
 }
 
@@ -1266,7 +1264,7 @@ pre .s {
 }
 
 .contact h2 {
-  font-family: var(--affiche);
+  font-family: var(--font-display);
   font-weight: 900;
   text-transform: uppercase;
   font-size: clamp(3rem, 8vw, 6rem);
@@ -1274,19 +1272,19 @@ pre .s {
 }
 
 .contact h2 span {
-  color: var(--fenetre);
+  color: var(--accent-lavender);
 }
 
 .contact .intro {
   margin-top: 18px;
-  color: var(--brume);
+  color: var(--text-muted);
   max-width: 28em;
 }
 
 .visite {
   position: relative;
-  background: var(--papier);
-  color: var(--encre);
+  background: var(--card-light);
+  color: var(--text-dark);
   border-radius: 14px;
   padding: 30px clamp(20px, 4vw, 34px);
   box-shadow: 0 26px 50px rgba(0, 0, 0, 0.5);
@@ -1309,7 +1307,7 @@ pre .s {
 }
 
 .visite .nom-carte {
-  font-family: var(--affiche);
+  font-family: var(--font-display);
   font-weight: 900;
   text-transform: uppercase;
   font-size: clamp(2rem, 4vw, 2.6rem);
@@ -1317,7 +1315,7 @@ pre .s {
 }
 
 .visite .role {
-  color: var(--encre-2);
+  color: var(--text-dark-muted);
   font-size: 0.92rem;
   margin-top: 6px;
 }
@@ -1346,12 +1344,12 @@ pre .s {
 }
 
 .coord button {
-  background: var(--encre);
-  color: var(--papier);
+  background: var(--text-dark);
+  color: var(--card-light);
   border: 0;
   border-radius: 6px;
   padding: 6px 12px;
-  font-family: var(--texte);
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.8rem;
   cursor: pointer;
@@ -1359,20 +1357,20 @@ pre .s {
 }
 
 .coord button:hover {
-  box-shadow: 0 0 18px var(--halo);
+  box-shadow: 0 0 18px var(--glow);
 }
 
 .coord button.ok {
-  background: var(--rouge);
+  background: var(--badge-red);
 }
 
 .lieu {
   margin-top: 12px;
   font-size: 0.85rem;
-  color: var(--encre-2);
+  color: var(--text-dark-muted);
 }
 
-/* a-venir */
+/* en cours */
 .a-venir {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1396,12 +1394,12 @@ pre .s {
 
 .prochaine:hover {
   transform: translateY(-3px);
-  border-color: var(--fenetre);
-  box-shadow: 0 0 46px 4px var(--halo-doux);
+  border-color: var(--accent-lavender);
+  box-shadow: 0 0 46px 4px var(--glow-soft);
 }
 
 .prochaine .coin {
-  color: var(--lune);
+  color: var(--text-light);
   top: 16px;
   left: 20px;
 }
@@ -1414,16 +1412,16 @@ pre .s {
   position: absolute;
   top: 18px;
   right: 20px;
-  font-family: var(--mono);
+  font-family: var(--font-code);
   font-size: 0.75rem;
-  color: var(--fenetre);
+  color: var(--accent-lavender);
   border: 1px solid rgba(203, 195, 227, 0.45);
   border-radius: 5px;
   padding: 3px 8px;
 }
 
 .prochaine h3 {
-  font-family: var(--affiche);
+  font-family: var(--font-display);
   font-weight: 900;
   text-transform: uppercase;
   font-size: clamp(2.6rem, 5vw, 3.6rem);
@@ -1432,13 +1430,13 @@ pre .s {
 }
 
 .prochaine .sous {
-  color: var(--lune);
+  color: var(--text-light);
   font-weight: 500;
   margin-bottom: 10px;
 }
 
 .prochaine p {
-  color: var(--brume);
+  color: var(--text-muted);
   font-size: 0.95rem;
   max-width: 32em;
 }

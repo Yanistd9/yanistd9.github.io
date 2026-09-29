@@ -36,11 +36,11 @@
       <div>
         <div class="who">
           <img src="images/photo.jpg" alt="Photo de Yanis Trebuchon Duclos">
-          <span>BUT Informatique, 2ᵉ année<br>IUT Paris Rives de Seine</span>
+          <span>BUT Informatique, 2e année<br>IUT Paris Rives de Seine</span>
         </div>
         <h1><span class="prenom">Yanis</span><span class="nom">Trebuchon</span><span class="nom">Duclos</span></h1>
-        <p class="accroche">Curieux de la façon dont les choses fonctionnent.</p>
-        <p class="lede">Étudiant en 2ᵉ année de BUT Informatique, à la recherche d'un stage en développement logiciel ou web. Pour commencer, un petit memory écrit pour cette page : chaque paire trouvée mène au projet qui prouve la compétence.</p>
+        <p class="accroche">Passionné par le développement et la conception logicielle.</p>
+        <p class="lede">Actuellement en 2e année de BUT Informatique, je recherche un stage de 10 semaines en développement logiciel ou web. En haut de page, un memory interactif lie directement chaque compétence aux projets réalisés.</p>
         <div class="dispo"><span>Stage de 10 semaines</span><span>À partir du 19 avril 2027</span><span>Asnières-sur-Seine (92)</span></div>
         <div class="actions">
           <a class="btn plein" href="#projets">Voir les projets</a>
@@ -55,7 +55,7 @@
           <span class="compte" id="compte">0 / 6 paires · 0 coup</span>
         </div>
         <div class="plateau" id="plateau"></div>
-        <p class="consigne" id="consigne">Retournez deux cartes. Si elles vont ensemble, la preuve apparaît ici.</p>
+        <p class="consigne" id="consigne">Retournez deux cartes. Si elles correspondent, la preuve apparaît ici.</p>
         <ul class="preuves" id="preuves"></ul>
         <div class="fin" id="fin" hidden>
           <span id="fin-texte"></span>
@@ -71,7 +71,7 @@
       <div class="bloc-tete">
         <h2>Six <span>projets</span></h2>
         <div>
-          <p>Des projets menés en BUT, décrits par ce que j'y ai fait moi-même. Chaque carte porte sa famille :</p>
+          <p>Projets réalisés en BUT Informatique, classés par dominante :</p>
           <div class="couleurs"><span><b>♠</b>programmation</span><span class="rouge"><b>♦</b>web</span><span><b>♣</b>données</span></div>
         </div>
       </div>
@@ -80,26 +80,25 @@
         <article class="projet web" id="p-memory">
           <span class="coin" aria-hidden="true">JS<i>♦</i></span><span class="coin bas" aria-hidden="true">JS<i>♦</i></span>
           <div>
-            <div class="meta"><span class="sorte">♦ JavaScript · HTML · CSS</span><span>SAÉ 2.01 · 1ʳᵉ année</span><span>Équipe de 3</span></div>
+            <div class="meta"><span class="sorte">♦ JavaScript · HTML · CSS</span><span>SAÉ 2.01 · 1re année</span><span>Équipe de 3</span></div>
             <h3>Memory, le jeu de SAÉ</h3>
-            <p>Un projet réalisé et rendu en première année, sans lien avec le petit jeu du haut de page. C'est un memory complet qui tourne dans le navigateur et enregistre chaque partie sur un serveur de scores.</p>
+            <p>Projet académique de première année : un jeu de memory complet jouable dans le navigateur avec sauvegarde des scores via API distante.</p>
             <ul class="fait">
-              <li>Le plateau, le chrono, le compteur de coups et la fin de partie</li>
-              <li>Quatre thèmes visuels en variables CSS, mémorisés entre les visites</li>
-              <li>Meilleurs scores, historique et statistiques sauvegardés dans le navigateur</li>
-              <li>Un mode 2 à 4 joueurs, un mode contre la montre, et un morpion caché dans le titre</li>
-              <li>Si le serveur de scores ne répond pas, la partie continue en local</li>
+              <li>Gestion du plateau, chronomètre, compteur de coups et conditions de fin</li>
+              <li>Quatre thèmes visuels avec variables CSS, conservés entre les visites</li>
+              <li>Classement, historique et statistiques stockés localement</li>
+              <li>Modes 2 à 4 joueurs, contre-la-montre et mini-jeu bonus</li>
+              <li>Gestion du mode hors-ligne en cas d'indisponibilité du serveur</li>
             </ul>
           </div>
           <figure class="visuel">
-            <pre><span class="c">// Game.js — fin de partie</span>
+            <pre><span class="c">// Envoi du résultat à l'API</span>
 <span class="k">if</span> (<span class="k">this</span>.#id !== <span class="k">null</span>) {
   <span class="k">try</span> {
     <span class="k">await</span> ApiService.updateGameResult(
       <span class="k">this</span>.#id, pairsRemaining);
   } <span class="k">catch</span> (error) {
-    showNotice(<span class="s">"Le score n'a pas pu être
-      enregistré sur le serveur."</span>);
+    showNotice(<span class="s">"Le score n'a pas pu être enregistré sur le serveur."</span>);
   }
 }</pre>
             <div class="chiffre">
@@ -115,12 +114,12 @@
           <div>
             <div class="meta"><span class="sorte">♠ Java</span><span>SAÉ 2.02</span><span>Équipe de 3</span></div>
             <h3>Graphe</h3>
-            <p>Représenter l'architecture d'un programme Java sous forme de graphe orienté, puis répondre à une vraie question : qui dépend de quoi ?</p>
+            <p>Modélisation de l'architecture d'un programme Java sous forme de graphe orienté pour analyser les dépendances inter-classes.</p>
             <ul class="fait">
-              <li>Deux représentations comparées : listes d'adjacence et matrice d'adjacence</li>
-              <li>Import et export de diagrammes PlantUML</li>
-              <li>Calcul des dépendants directs d'une classe, puis des dépendants élargis en remontant les paquetages</li>
-              <li>Tout est couvert par des tests JUnit 5</li>
+              <li>Comparaison de structures : listes d'adjacence vs matrice d'adjacence</li>
+              <li>Importation et exportation de schémas PlantUML</li>
+              <li>Calcul des dépendances directes et transitives entre paquetages</li>
+              <li>Validation complète par tests unitaires JUnit 5</li>
             </ul>
             <div class="chiffre">
               <div><b>51</b>tests JUnit passés</div>
@@ -151,12 +150,12 @@
           <div>
             <div class="meta"><span class="sorte">♣ SQL · HTML · CSS</span><span>SAÉ 1.04</span><span>Équipe de 4</span></div>
             <h3>KDou</h3>
-            <p>Analyser la base de données d'un distributeur alimentaire pour l'aider à décider : ce qui se vend, à qui, et avec quels fournisseurs. Le rapport est un site web.</p>
+            <p>Exploitation d'une base relationnelle pour une centrale agroalimentaire afin d'établir des indicateurs de ventes et de distribution.</p>
             <ul class="fait">
-              <li>Étude du schéma relationnel et de la cohérence des données</li>
-              <li>Les requêtes imposées, puis des indicateurs décisionnels en SQL</li>
-              <li>Mon indicateur : les catégories les plus commandées par les clients partenaires</li>
-              <li>Une console SQL qui tourne dans le navigateur, sur une base de démonstration reconstruite à partir du schéma</li>
+              <li>Analyse du schéma relationnel et contraintes d'intégrité</li>
+              <li>Conception de requêtes décisionnelles et agrégations complexes</li>
+              <li>Indicateur ciblé : catégories les plus commandées par les clients partenaires</li>
+              <li>Console SQL interactive dans le navigateur sur une base de démo</li>
             </ul>
           </div>
           <figure class="visuel">
@@ -185,11 +184,11 @@
           <div>
             <div class="meta"><span class="sorte">♠ C</span><span>SAÉ C · période A</span></div>
             <h3>Gestion de scolarité</h3>
-            <p>Un programme en ligne de commande qui suit les étudiants d'un BUT sur six semestres : inscriptions, notes, démissions, jurys et bilans.</p>
+            <p>Application CLI gérant le cursus complet des promotions de BUT : inscriptions, relevés de notes, démissions et délibérations du jury.</p>
             <ul class="fait">
-              <li>Une structure par étudiant : notes par UE et par semestre, codes de validation, statut</li>
-              <li>Les commandes INSCRIRE, NOTE, CURSUS, ETUDIANTS, DEMISSION, DEFAILLANCE, JURY et BILAN</li>
-              <li>Les règles du jury : passage, ajournement, diplôme</li>
+              <li>Structure de données complète par étudiant (notes par UE, statuts, validation)</li>
+              <li>Interpréteur de commandes (INSCRIRE, NOTE, CURSUS, JURY, BILAN...)</li>
+              <li>Algorithme d'application des règles de passage et compensation</li>
             </ul>
             <div class="chiffre">
               <div><b>~500</b>lignes de C</div>
@@ -206,7 +205,7 @@ Inscription enregistree (2)
 <span class="k">INSCRIRE</span> Ada Lovelace
 Nom incorrect
 <span class="k">EXIT</span></pre>
-            <figcaption>Une session réelle : le programme refuse les doublons</figcaption>
+            <figcaption>Exemple d'exécution : détection des doublons d'inscriptions</figcaption>
           </figure>
         </article>
 
@@ -215,11 +214,11 @@ Nom incorrect
           <div>
             <div class="meta"><span class="sorte">♠ C</span><span>Projet universitaire</span></div>
             <h3>Crazy Circus</h3>
-            <p>Un jeu de réflexion en console. Des animaux sont empilés sur deux podiums, et il faut retrouver l'ordre demandé avec le moins de mouvements possible.</p>
+            <p>Jeu d'ordonnancement en console. Des figurines sont empilées sur deux podiums et doivent atteindre un état cible en un minimum de déplacements.</p>
             <ul class="fait">
-              <li>La logique de jeu et la validation des coups</li>
-              <li>Les podiums gérés comme des piles</li>
-              <li>L'affichage dynamique en console</li>
+              <li>Logique des déplacements et contrôle de conformité des coups</li>
+              <li>Gestion des podiums avec des structures de piles</li>
+              <li>Mise à jour dynamique de l'affichage dans le terminal</li>
             </ul>
           </div>
           <figure class="visuel" id="cirque">
@@ -237,7 +236,7 @@ Nom incorrect
               <span class="socle" style="left:72%"></span>
             </div>
             <div class="cirque-pied">
-              <figcaption>Deux podiums, deux piles : on ne touche qu'aux animaux du dessus</figcaption>
+              <figcaption>Deux podiums manipulés comme des piles (LIFO)</figcaption>
               <button type="button" id="cirque-btn">Pause</button>
             </div>
           </figure>
@@ -247,11 +246,11 @@ Nom incorrect
           <span class="coin" aria-hidden="true">JS<i>♦</i></span><span class="coin bas" aria-hidden="true">JS<i>♦</i></span>
           <div>
             <div class="meta"><span class="sorte">♦ HTML · CSS · JavaScript</span><span>Projet personnel</span></div>
-            <h3>Ce site</h3>
-            <p>Écrit à la main, sans framework. Le petit memory du haut de page a été écrit exprès pour ce site, bien plus simple que mon jeu de SAÉ : un paquet mélangé, deux cartes au plus, une vérification, et les cartes se referment si elles ne vont pas ensemble.</p>
+            <h3>Ce portfolio</h3>
+            <p>Conception artisanale sans framework. Intégration d'un memory interactif léger pour présenter mes compétences de manière ludique.</p>
             <ul class="fait">
-              <li>Mise en page qui s'adapte du téléphone au grand écran</li>
-              <li>Navigation au clavier et animations coupées si vous les désactivez</li>
+              <li>Mise en page réactive adaptée aux mobiles et écrans larges</li>
+              <li>Prise en compte de la navigation clavier et des préférences de mouvement</li>
             </ul>
           </div>
           <figure class="visuel">
@@ -262,7 +261,7 @@ Nom incorrect
 } <span class="k">else</span> {
   setTimeout(refermer, <span class="s">850</span>);
 }</pre>
-            <figcaption>Le cœur du memory de cette page</figcaption>
+            <figcaption>Algorithme de comparaison des cartes</figcaption>
           </figure>
         </article>
       </div>
@@ -274,22 +273,22 @@ Nom incorrect
     <div class="wrap">
       <div class="bloc-tete">
         <h2>En <span>cours</span></h2>
-        <p>Ce que j'apprends cette année en 2ᵉ année de BUT. Pas encore de projet à montrer : ce sont les prochaines cartes du jeu.</p>
+        <p>Technologies étudiées cette année en 2e année de BUT :</p>
       </div>
       <div class="a-venir">
         <article class="prochaine web">
           <span class="coin" aria-hidden="true">PHP<i>♦</i></span>
           <span class="quand-etiquette">S3</span>
           <h3>PHP</h3>
-          <p class="sous">Le développement web côté serveur</p>
-          <p>Générer des pages à la volée, traiter des formulaires et relier un site à une base de données. La suite logique de ce que je fais déjà en HTML, CSS et SQL.</p>
+          <p class="sous">Développement back-end</p>
+          <p>Rendu dynamique, traitement des requêtes et formulaires, liaison avec les bases de données relationnelles.</p>
         </article>
         <article class="prochaine">
           <span class="coin" aria-hidden="true">NoSQL<i>♣</i></span>
           <span class="quand-etiquette">S4</span>
           <h3>NoSQL</h3>
-          <p class="sous">Les bases de données non relationnelles</p>
-          <p>Stocker des données sans tables ni schéma fixe, et savoir quand ce modèle est plus adapté qu'une base SQL classique.</p>
+          <p class="sous">Bases non relationnelles</p>
+          <p>Gestion de données sans schéma rigide et compréhension des scénarios adaptés face aux bases SQL traditionnelles.</p>
         </article>
       </div>
     </div>
@@ -300,38 +299,38 @@ Nom incorrect
     <div class="wrap">
       <div class="bloc-tete">
         <h2>Par<span>cours</span></h2>
-        <p>Un bac technologique, puis l'informatique. La fenêtre suivante est celle qui vous concerne.</p>
+        <p>Cursus de formation et cadre de ma recherche de stage :</p>
       </div>
       <div class="parcours">
         <ol class="frise">
           <li>
             <span class="quand">2021 – 2024</span>
             <h3>Bac STI2D</h3>
-            <p>Lycée Léonard de Vinci, Levallois-Perret. Mention Assez Bien, formation orientée systèmes et sécurité. Deux ans de binaire avant d'écrire mon premier programme.</p>
+            <p>Lycée Léonard de Vinci, Levallois-Perret. Mention Assez Bien. Découverte de la logique système, du réseau et des premières notions de programmation.</p>
           </li>
           <li class="maintenant">
             <span class="quand">2024 – aujourd'hui</span>
             <h3>BUT Informatique</h3>
-            <p>IUT Paris Rives de Seine. Algorithmique et complexité, programmation système, réseaux, bases de données, IHM, probabilités et statistiques, gestion de projet.</p>
+            <p>IUT Paris Rives de Seine. Algorithmique, programmation système, réseaux, bases de données, IHM, statistiques et gestion de projet.</p>
           </li>
           <li class="avenir">
             <span class="quand">Avril 2027</span>
             <h3>Stage de 10 semaines</h3>
-            <p>À partir du 19 avril, en développement logiciel ou web. La date de fin peut s'adapter.</p>
+            <p>À partir du 19 avril, en développement logiciel ou web. Calendrier adaptable selon les besoins de l'entreprise.</p>
           </li>
         </ol>
         <div class="cote">
           <div class="encart">
             <h3>Expérience</h3>
-            <p>Stage d'observation de 3 semaines à l'Agirc-Arrco : les processus de gestion d'un organisme d'intérêt général et la coordination entre services.</p>
+            <p>Stage de 3 semaines à l'Agirc-Arrco : découverte des processus de gestion d'une grande structure et de la coordination interne.</p>
           </div>
           <div class="encart">
             <h3>Outils</h3>
             <dl>
               <dt>Langages</dt><dd>C, Java, SQL, JavaScript, HTML, CSS</dd>
               <dt>Éditeurs</dt><dd>IntelliJ IDEA, CLion, PhpStorm, PyCharm, VS Code</dd>
-              <dt>Autres</dt><dd>Git et GitHub, Linux en terminal</dd>
-              <dt>Langues</dt><dd>Français natif, anglais B2</dd>
+              <dt>Autres</dt><dd>Git, GitHub, Linux (Bash / ligne de commande)</dd>
+              <dt>Langues</dt><dd>Français (natif), Anglais (B2)</dd>
             </dl>
           </div>
         </div>
@@ -344,13 +343,13 @@ Nom incorrect
     <div class="wrap">
       <div class="bloc-tete">
         <h2>Hors <span>code</span></h2>
-        <p>Ce qui m'occupe le reste du temps, et qui finit souvent par revenir dans mes projets.</p>
+        <p>Centres d'intérêt personnels :</p>
       </div>
       <div class="main-cartes">
-        <div class="gout"><span class="coin" aria-hidden="true">S</span><h3>Sport</h3><p>Musculation plusieurs fois par semaine, avec un programme que je fais évoluer. Je prépare un outil pour suivre mes séances.</p></div>
-        <div class="gout"><span class="coin" aria-hidden="true">J</span><h3>Jeux vidéo</h3><p>J'y joue, et j'en code : deux des projets ci-dessus sont des jeux.</p></div>
-        <div class="gout"><span class="coin" aria-hidden="true">M</span><h3>Musique</h3><p>Toujours quelque chose dans les oreilles, en particulier quand je code.</p></div>
-        <div class="gout"><span class="coin" aria-hidden="true">C</span><h3>Cinéma</h3><p>Je regarde beaucoup de films, et j'aime en parler après.</p></div>
+        <div class="gout"><span class="coin" aria-hidden="true">S</span><h3>Sport</h3><p>Musculation régulière et suivi de programme. Développement d'un outil personnel de suivi de séances.</p></div>
+        <div class="gout"><span class="coin" aria-hidden="true">J</span><h3>Jeux vidéo</h3><p>Intérêt pour les jeux compétitifs et de logique, ainsi que leur conception technique.</p></div>
+        <div class="gout"><span class="coin" aria-hidden="true">M</span><h3>Musique</h3><p>Écoute régulière, particulièrement lors des sessions de développement.</p></div>
+        <div class="gout"><span class="coin" aria-hidden="true">C</span><h3>Cinéma</h3><p>Cinéma et séries télévisées, goût pour les intrigues scénarisées et l'analyse des œuvres.</p></div>
       </div>
     </div>
   </section>
@@ -359,12 +358,12 @@ Nom incorrect
   <section class="contact" id="contact">
     <div class="wrap">
       <div>
-        <h2>Parlons de <span>votre stage</span></h2>
-        <p class="intro">Je suis disponible pour un échange, en visio ou sur place en Île-de-France.</p>
+        <h2>Me <span>contacter</span></h2>
+        <p class="intro">Disponible pour un entretien ou un échange technique, en visio ou en Île-de-France.</p>
       </div>
       <div class="visite">
         <div class="nom-carte">Yanis Trebuchon Duclos</div>
-        <div class="role">Étudiant en BUT Informatique · stage dès le 19 avril 2027</div>
+        <div class="role">Étudiant en BUT Informatique · Stage dès le 19 avril 2027</div>
         <div class="coords">
           <div class="coord"><span id="mail">Yanis060918@gmail.com</span><button type="button" data-copie="mail">Copier</button></div>
           <div class="coord"><span id="tel">07 69 40 30 15</span><button type="button" data-copie="tel">Copier</button></div>
